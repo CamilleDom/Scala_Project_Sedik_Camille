@@ -1,0 +1,6 @@
+// Supprimer doublons par code pays
+          val distinctCountries= goodFormat
+            .groupBy(_.code)
+            .map { case (_, list) => list.head }
+            .toList
+          val duplicatesRemoved = goodFormat.size - distinctCountries.size

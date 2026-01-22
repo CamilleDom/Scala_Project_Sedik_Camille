@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E008] Not Found Error: C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\src\main\scala\Main.scala:33:58 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m33 |[0m      println([31mf"- Entrées totales          : [0m${ParserStat.totalEntries}[31m"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                               ^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                 value totalEntries is not a member of object ParserStat[0m

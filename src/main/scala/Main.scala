@@ -2,10 +2,51 @@ object Main extends App {
 
   println(" Final Project : Analyse de Counties\n")
 
+  // Phase 1 Teste DataLoader
+  val resultEither = DataLoader.loadCountry("data/data_large.json")
+
+  resultEither.fold(
+    
+    errorMessage => println(s"Échec du chargement : $errorMessage"),
+
+    
+    countriesResult => {
+      println("\n Loading Statistics")
+      println("---------------------------")
+      println(f"- Entrées valides           : ${countriesResult.goodFormat.size}")
+      println(f"- Erreurs de parsing        : ${countriesResult.badCount}")
+
+      
+      val goodFormat: List[Country] = countriesResult.goodFormat
+      println(s"${goodFormat.size} entrées valides prêts pour Filtration")
+
+      // Phase 2 Teste DataValidator
+      val validCountries = DataValidator.filterValid(goodFormat)
+      val pStat = ParserStat(
+        totalEntries = goodFormat.size + countriesResult.badCount,
+        validEntries = validCountries.size,
+        invalidEntries = (goodFormat.size - validCountries.size) + countriesResult.badCount,
+        duplicatesRemoved = goodFormat.size - validCountries.size
+      )
+      println("\n Validation Statistics")
+      println("---------------------------")
+      println(f"- Entrees totales          : ${pStat.totalEntries}")
+      println(f"- Entrees valides          : ${pStat.validEntries}")
+      println(f"- Entrees invalides        : ${pStat.invalidEntries}")
+      println(f"- Doublons supprimés       : ${pStat.duplicatesRemoved}")
+
+    }
+  )
+
+
+
+
+
+/*
   // TODO: Creer le pipeline ETL avec for-comprehension
   val result = for {
     // TODO: 1. Charger les restaurants avec DataLoader
-    countries <- DataLoader.loadCountries("data/data_dirty.json")
+    countries <- DataLoader.loadCountry("data/data_dirty.json")
     _ = println(s" ${countries.length} countries charges")
     
     // TODO: 2. Valider et filtrer avec DataValidator
@@ -62,5 +103,5 @@ object Main extends App {
     case Left(error) =>
       // TODO: Afficher l'erreur et quitter
       println(s" Erreur lors du pipeline ETL : $error")
-  }
+  }*/
 }

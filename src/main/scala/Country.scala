@@ -10,6 +10,18 @@ case class Country(
   currency: String
 )
 
+case class CountryLoadResult(
+  goodFormat: List[Country],
+  badCount: Int
+)
+
+case class ParserStat(
+    totalEntries: Int,
+    validEntries: Int,
+    invalidEntries: Int,
+    duplicatesRemoved: Int
+)
+
 case class CountryStats(
   totalCountries: Int,
   totalPopulation: Long,

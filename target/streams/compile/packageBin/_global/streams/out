@@ -1,13 +1,113 @@
 [0m[[0m[0mdebug[0m] [0m[0mPackaging C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\seance-6-mini-etl_3-0.1.0-SNAPSHOT.jar ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Main$package$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\Main$package$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Main$package.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\Main$package.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Main$package.tasty[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\Main$package.tasty[0m
-[0m[[0m[0mdebug[0m] [0m[0m	main.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\main.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	main.tasty[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\main.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CapitalStats$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\CapitalStats$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CapitalStats.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\CapitalStats.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CapitalStats.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\CapitalStats.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ContinentLanguageDiversity$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\ContinentLanguageDiversity$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ContinentLanguageDiversity.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\ContinentLanguageDiversity.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ContinentLanguageDiversity.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\ContinentLanguageDiversity.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Country$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\Country$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Country.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\Country.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Country.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\Country.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CountryAnalysisReport$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\CountryAnalysisReport$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CountryAnalysisReport.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\CountryAnalysisReport.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CountryAnalysisReport.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\CountryAnalysisReport.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CountryLoadResult$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\CountryLoadResult$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CountryLoadResult.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\CountryLoadResult.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CountryLoadResult.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\CountryLoadResult.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CountryStats$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\CountryStats$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CountryStats.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\CountryStats.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CountryStats.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\CountryStats.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CurrencyUsage$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\CurrencyUsage$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CurrencyUsage.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\CurrencyUsage.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CurrencyUsage.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\CurrencyUsage.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DataLoader$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\DataLoader$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DataLoader$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\DataLoader$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DataLoader$$anon$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\DataLoader$$anon$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DataLoader$$anon$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\DataLoader$$anon$4.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DataLoader$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\DataLoader$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DataLoader.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\DataLoader.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DataLoader.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\DataLoader.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DataValidator$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\DataValidator$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DataValidator.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\DataValidator.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DataValidator.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\DataValidator.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ExtremeCountryStats$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\ExtremeCountryStats$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ExtremeCountryStats.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\ExtremeCountryStats.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ExtremeCountryStats.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\ExtremeCountryStats.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	GdpCategoryStats$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\GdpCategoryStats$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	GdpCategoryStats.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\GdpCategoryStats.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	GdpCategoryStats.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\GdpCategoryStats.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LanguageStats$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\LanguageStats$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LanguageStats.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\LanguageStats.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LanguageStats.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\LanguageStats.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\Main.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MultilingualCountry$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\MultilingualCountry$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MultilingualCountry.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\MultilingualCountry.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MultilingualCountry.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\MultilingualCountry.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ParserStat$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\ParserStat$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ParserStat.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\ParserStat.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ParserStat.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\ParserStat.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PopulationDensity$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\PopulationDensity$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PopulationDensity.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\PopulationDensity.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PopulationDensity.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\PopulationDensity.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TopCountry$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\TopCountry$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TopCountry.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\TopCountry.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TopCountry.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\camil\OneDrive - Efrei\I2 APP BDML\Scala\Scala_Project_Sedik_Camille\target\scala-3.3.7\classes\TopCountry.tasty[0m
 [0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
