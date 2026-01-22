@@ -1,5 +1,3 @@
-package miniEtl
-
 import io.circe._
 import io.circe.generic.auto._
 import io.circe.parser._
@@ -11,7 +9,7 @@ object DataLoader {
   /**
    * Lit un fichier JSON et parse les restaurants
    */
-  def loadRestaurants(filename: String): Either[String, List[Restaurant]] = {
+  def loadCountrie(filename: String): Either[String, List[Countrie]] = {
     // TODO: Utiliser Try pour lire le fichier
     //   1. Créer un Source.fromFile(filename)
     val source = Source.fromFile(filename)
@@ -19,10 +17,10 @@ object DataLoader {
     val content = source.mkString
     //   3. Fermer le fichier avec source.close() - IMPORTANT !
     source.close()
-    //   4. Parser avec decode[List[Restaurant]](content)
+    //   4. Parser avec decode[List[Countrie]](content)
     //   5. Gérer les erreurs avec pattern matching
-    decode[List[Restaurant]](content) match {
-      case Right(restaurants) => Right(restaurants)
+    decode[List[Countrie]](content) match {
+      case Right(countries) => Right(countries)
       case Left(error) => Left(s"Erreur de parsing JSON: ${error.getMessage}")
     }
     
