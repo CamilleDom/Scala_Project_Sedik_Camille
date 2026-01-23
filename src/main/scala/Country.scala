@@ -1,3 +1,4 @@
+// Classe pour un pays
 case class Country(
   name: String,
   code: String,
@@ -10,21 +11,23 @@ case class Country(
   currency: String
 )
 
+//Classes pour le résultat du chargement des pays
 case class CountryLoadResult(
   goodFormat: List[Country],
   badCount: Int
 )
 
-case class ParserStat(
+case class ParStatistics(
     totalEntries: Int,
     validEntries: Int,
     invalidEntries: Int,
     duplicatesRemoved: Int
 )
 
+//Classe pour les statistiques des pays
 case class CountryStats(
   totalCountries: Int,
-  totalPopulation: Long,
+  averagePopulation: Long,
   averageGdp: Double
 )
 
@@ -76,19 +79,20 @@ case class ExtremeCountryStats(
   smallest: String
 )
 
-
 case class MultilingualCountry(
   name: String,
   languages: List[String]
 )
 
-case class CountryAnalysisReport(
-  
+// Classes pour le rapport final
+case class StatCompile(
   globalStats: CountryStats,
 
   top_10_by_population: List[TopCountry],
   top_10_by_area: List[TopCountry],
   top_10_by_gdp: List[TopCountry],
+  top_10_by_density: List[TopCountry],
+  top_10_by_wealth: List[TopCountry],
 
   countries_by_continent: Map[String, Int],
   average_population_by_continent: Map[String, Double],
@@ -105,5 +109,19 @@ case class CountryAnalysisReport(
 
   currencyUsage: List[CurrencyUsage],
 
-  extremeStats: ExtremeCountryStats
+  extremeStats: ExtremeCountryStats,
+
+)
+
+case class PerformanceStats(
+  processingTimeMs: Long,
+  entriesPerSecond: Double
+)
+
+case class CountryAnalysisReport(
+    parser_Statistics: ParStatistics,
+
+    statistics_Compile : StatCompile,
+
+    performance_Metrics: PerformanceStats
 )

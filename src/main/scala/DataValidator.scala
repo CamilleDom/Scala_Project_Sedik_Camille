@@ -17,11 +17,21 @@ object DataValidator {
   }
 
   def filterValid(countries: List[Country]): List[Country] = {
-    countries.filter(isValid).groupBy(_.code)
+    countries.filter(isValid)
+  }
+
+  def filterDoublons(countries: List[Country]): List[Country] = {
+    countries.groupBy(_.code)
     .map { case (_, list) => list.head }
     .toList
-    // Supprimer doublons par code pays
-    
-    
+  }
+
+  def parserStatistics(countries: List[Country], size: Int): ParStatistics = {
+    ParStatistics(
+      totalEntries = size,
+      validEntries = countries.length,
+      invalidEntries = size - countries.length,
+      duplicatesRemoved = size - countries.map(_.code).distinct.length
+    )
   }
 }
