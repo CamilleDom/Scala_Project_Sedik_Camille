@@ -49,14 +49,14 @@ object Main extends App {
       _ = println(s"Rapport genere")
 
       // 7️- Écrire le rapport JSON
-      _ = ReportGenerator.writeResult(report, s"results_$fileName.json") match {
+      _ = ReportGenerator.writeResult(report, s"$fileName") match {
         case Right(_) => println(s"Rapport écrit dans results_$fileName.json")
         case Left(err) => println(s"Erreur écriture JSON : $err")
       }
 
       // 8️- Écrire le rapport texte
-      _ = ReportGenerator.writeFullReport(report, s"results_$fileName.txt")
-      _ = println(s"Rapport texte écrit dans results_$fileName.txt")
+      _ = ReportGenerator.writeFullReport(report, s"$fileName")
+      _ = println(s"Rapport texte écrit dans rapport_$fileName.txt")
     } yield report
 
     // Gestion d'erreur globale
