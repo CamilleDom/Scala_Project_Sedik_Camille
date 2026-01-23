@@ -1,6 +1,7 @@
 object DataValidator {
+
+  // Valide un pays selon les règles
   def isValid(country: Country): Boolean = {
-    // TODO: Valider les champs selon les règles du README
     val hasPositivePopulation = country.population > 0
     val hasPositiveArea = country.area > 0
     val hasValidGdp = country.gdp >= 0
@@ -12,26 +13,34 @@ object DataValidator {
     val hasLanguages = country.languages.nonEmpty
 
     hasPositivePopulation && hasPositiveArea && hasValidGdp &&
-    hasNonEmptyName && hasNonEmptyCode && hasNonEmptyCapital &&
-    hasNonEmptyContinent && hasNonEmptyCurrency && hasLanguages
+      hasNonEmptyName && hasNonEmptyCode && hasNonEmptyCapital &&
+      hasNonEmptyContinent && hasNonEmptyCurrency && hasLanguages
   }
 
-  def filterValid(countries: List[Country]): List[Country] = {
-    countries.filter(isValid)
+  // Filtre les pays valides et retourne le nombre + liste
+  def filterValid(countries: List[Country]): (Int, List[Country]) = {
+    val valid = countries.filter(isValid)
+    (valid.size, valid)
   }
 
-  def filterDoublons(countries: List[Country]): List[Country] = {
-    countries.groupBy(_.code)
-    .map { case (_, list) => list.head }
-    .toList
+  // Supprime les doublons par code et retourne le nombre + liste
+  def filterDoublons(countries: List[Country]): (Int, List[Country]) = {
+    val deduped = countries.groupBy(_.code).map { case (_, list) => list.head }.toList
+    (deduped.size, deduped)
   }
 
-  def parserStatistics(countries: List[Country], size: Int): ParStatistics = {
-    ParStatistics(
-      totalEntries = size,
-      validEntries = countries.length,
-      invalidEntries = size - countries.length,
-      duplicatesRemoved = size - countries.map(_.code).distinct.length
+  // Parse et retourne les statistiques
+  def parserEtStatistics(countries: List[Country], totalEntries: Int): (List[Country], ParStatistics) = {
+    val (validCount, validCountries) = filterValid(countries)
+    val (dedupCount, dedupCountries) = filterDoublons(validCountries)
+
+    val parseStats = ParStatistics(
+      totalEntries = totalEntries,
+      validEntries = validCount,
+      invalidEntries = totalEntries - validCount,
+      duplicatesRemoved = validCount - dedupCount
     )
+
+    (dedupCountries, parseStats)
   }
 }

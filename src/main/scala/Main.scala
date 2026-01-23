@@ -1,81 +1,67 @@
 object Main extends App {
 
-  println(" Final Project : Analyse de Counties\n")
+  println("Final Project : Analyse de Countries\n")
 
-/*  // Phase 1 Teste DataLoader
-  val resultEither = DataLoader.loadCountry("data/data_large.json")
-
-  resultEither.fold(
-    
-    errorMessage => println(s"Échec du chargement : $errorMessage"),
-
-    countriesResult => {
-      println("\n Loading Statistics")
-      println("---------------------------")
-      println(f"- Entrées valides           : ${countriesResult.goodFormat.size}")
-      println(f"- Erreurs de parsing        : ${countriesResult.badCount}")
-
-      val goodFormat: List[Country] = countriesResult.goodFormat
-      println(s"${goodFormat.size} entrées valides prêts pour Filtration")
-
-      // Phase 2 Teste DataValidator
-      val validCountries = DataValidator.filterValid(goodFormat)
-      val pStat = ParserStat(
-        totalEntries = goodFormat.size + countriesResult.badCount,
-        validEntries = validCountries.size,
-        invalidEntries = (goodFormat.size - validCountries.size) + countriesResult.badCount,
-        duplicatesRemoved = goodFormat.size - validCountries.size
-      )
-      println("\n Validation Statistics")
-      println("---------------------------")
-      println(f"- Entrees totales          : ${pStat.totalEntries}")
-      println(f"- Entrees valides          : ${pStat.validEntries}")
-      println(f"- Entrees invalides        : ${pStat.invalidEntries}")
-      println(f"- Doublons supprimés       : ${pStat.duplicatesRemoved}")
-
-    }
+  val filesList: List[String] = List(
+    "data_clean",
+    "data_large",
+    "data_dirty"
   )
-*/
-
-  val filesList: List[String] = List("data/data_clean.json", "data/data_large.json", "data/data_dirty.json")
 
   filesList.foreach { fileName =>
+    val start = System.currentTimeMillis()
+
     println(s"\n--- Processing file: $fileName ---")
-    val result = for {
-      //1. Charger les restaurants avec DataLoader
-      countries <- DataLoader.loadCountry("data/data_dirty.json")
-      _ = println(s" ${countries.length} countries charges")
-      
-      // 2. Valider et filtrer avec DataValidator
-      validCountries = DataValidator.filterValid(countries)
-      _ = println(s" ${validCountries.length} countries valides")
-      
-      /*// 3. Generer le rapport avec ReportGenerator
-      report = ReportGenerator.generateReport(validCountries)
-      _ = println(s" Rapport genere")
-      */
 
-      // 3. Generer le rapport avec ReportGenerator
-      report = ReportGenerator.generateReport(
-        parseStat = DataValidator.parserStatistics,
-        statCompile = StatisticsCompiler.compileStatistics(validCountries),
-        performance = PerformanceTracker.getPerformanceStats()
+    val reportEither = for {
+      // 1️- Charger les countries
+      countryLoadResult <- DataLoader.loadCountry(fileName)  // Either[String, CountryLoadResult]
+
+      // 2️- Extraire bonnes et mauvaises entrées
+      goodFormat = countryLoadResult.goodFormat
+      badCount  = countryLoadResult.badCount
+      _ = println(s"${goodFormat.length} countries charges")
+
+      // 3️- Valider et filtrer (enlever doublons + stats parsing)
+      parsedTuple = DataValidator.parserEtStatistics(goodFormat, goodFormat.size + badCount)
+      validCountries = parsedTuple._1
+      parseStatistics = parsedTuple._2
+      _ = println(s"${validCountries.length} countries valides")
+
+      // 4️- Compiler statistiques
+      compiledStats = StatsCalculator.stat(validCountries)
+
+      // 5️- Calculer performance
+      end = System.currentTimeMillis()
+      duration = end - start
+      performance = PerformanceStats(
+        processingTimeMs = duration,
+        entriesPerSecond = ((goodFormat.size + badCount).toDouble / duration) * 1000
       )
-      _ = println(s" Rapport genere")
+      _ = println(s"Temps de traitement : $duration ms")
 
-      // 4. ecrire le rapport
-      _ <- ReportGenerator.writeReport(report, s"results_$fileName.json")
-      _ = println(s" Rapport ecrit dans results_$fileName.json")
-      
+      // 6️- Générer le rapport
+      report = ReportGenerator.generateReport(
+        parseStat = parseStatistics,
+        statCompile = compiledStats,
+        performance = performance
+      )
+      _ = println(s"Rapport genere")
+
+      // 7️- Écrire le rapport JSON
+      _ = ReportGenerator.writeResult(report, s"results_$fileName.json") match {
+        case Right(_) => println(s"Rapport écrit dans results_$fileName.json")
+        case Left(err) => println(s"Erreur écriture JSON : $err")
+      }
+
+      // 8️- Écrire le rapport texte
+      _ = ReportGenerator.writeFullReport(report, s"results_$fileName.txt")
+      _ = println(s"Rapport texte écrit dans results_$fileName.txt")
     } yield report
 
-    result match {
-      case Right(report) =>
-        ReportGenerator.writeFullReport(report, s"results_$fileName.txt")
-        
-      case Left(error) =>
-        // TODO: Afficher l'erreur et quitter
-        println(s" Erreur lors du pipeline ETL : $error")
+    // Gestion d'erreur globale
+    reportEither.left.foreach { error =>
+      println(s"Erreur de chargement ou traitement du fichier $fileName : $error")
     }
   }
 }

@@ -5,10 +5,10 @@ import scala.io.Source
 
 object DataLoader {
   
-  def loadCountry(filePath: String): Either[String, CountryLoadResult] = {
+  def loadCountry(fileName: String): Either[String, CountryLoadResult] = {
     try {
       // Lire le fichier
-      val content = Source.fromFile(filePath).mkString
+      val content = Source.fromFile(s"data/$fileName.json").mkString
 
       // Décoder en List[Json]
       decode[List[Json]](content) match {

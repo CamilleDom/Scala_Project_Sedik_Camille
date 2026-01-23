@@ -1,35 +1,34 @@
 object StatsCalculator {
 
-  def StatCompile(countries:List[Country]): StatCompile = {
+  def stat(countries:List[Country]): StatCompile = {
 
     StatCompile(
-        globalStats = globalStats(countries),
-        average_population_by_continent = average_population_by_continent(countries),
-        top_10_by_population = top_10_by_population(countries),
-        top_10_by_area = top_10_by_area(countries),
-        top_10_by_gdp = top_10_by_gdp(countries),
-        top_10_by_density = top_10_by_density(countries),
-        top_10_by_wealth = top_10_by_wealth(countries),
-        countries_by_continent = countries_by_continent(countries),
-        multilingual_countries = multilingual_countries(countries),
-        languageStats = languageStats(countries),
-        continentLanguageDiversity = continentLanguageDiversity(countries),
-        populationDensity = populationDensity(countries),
-        gdpCategoryStats = gdpCategoryStats(countries),
-        capitalStats = capitalStats(countries),
-        currencyUsage = currencyUsage(countries),
-        extremeStats = extremeStats(countries)
+        countryStatistics = globalStats(countries),
+        avPopByCont = average_population_by_continent(countries),
+        top10ByPop = top_10_by_population(countries),
+        top10ByArea = top_10_by_area(countries),
+        top10ByGdp = top_10_by_gdp(countries),
+        top10ByDensity = top_10_by_density(countries),
+        top10ByWealth = top_10_by_wealth(countries),
+        countriesByContinent = countries_by_continent(countries),
+        multilingualCountries = multilingual_countries(countries),
+        languageStatistics = languageStats(countries),
+        continentLangDiv = continentLanguageDiversity(countries),
+        popDensity = populationDensity(countries),
+        gdpCatStats = gdpCategoryStats(countries),
+        capStats = capitalStats(countries),
+        curUsage = currencyUsage(countries),
+        extStats = extremeStats(countries)
     )
   }
 
   def globalStats(countries:List[Country]): CountryStats = {
 
     CountryStats(
-      totalCountries = countries.size,
-      averagePopulation = if (countries.nonEmpty) countries.map(_.population).sum.toDouble / countries.size else 0.0,
-      averageGdp = if (countries.nonEmpty) countries.map(_.gdp).sum.toDouble / countries.size else 0.0
-    )
-    
+    totalCountries = countries.size,
+    averagePopulation = if (countries.nonEmpty) (countries.map(_.population).sum / countries.size.toLong) else 0L,
+    averageGdp = if (countries.nonEmpty) countries.map(_.gdp).sum / countries.size else 0.0
+    ) 
   }
 
   def top_10_by_population(countries:List[Country]): List[TopCountry] = {
@@ -89,14 +88,16 @@ object StatsCalculator {
   }
 
   def languageStats(countries: List[Country]): List[LanguageStats] = {
-
-    countries.flatMap(c => c.languages.map(lang => (lang, c)))
-    .groupBy(_._1)
-    .map { 
-        case (lang, pairs) =>LanguageStats( lang, pairs.size, pairs.map(_._2)
-            )
-        }.toList
-}
+    countries.flatMap(c => c.languages.map(lang => (lang, c.name))) // extraire le nom
+      .groupBy(_._1)
+      .map { case (lang, pairs) =>
+        LanguageStats(
+          language = lang,
+          countryCount = pairs.size,
+          commonCountries = pairs.map(_._2) // maintenant c'est List[String]
+        )
+      }.toList
+  }
 
   def continentLanguageDiversity(countries:List[Country]): List[ContinentLanguageDiversity] = {
 
@@ -117,18 +118,21 @@ object StatsCalculator {
   }
 
   def gdpCategoryStats(countries: List[Country]): List[GdpCategoryStats] = {
-  
-    countries.map { c =>
-        val category = 
-        if (c.gdp < 4000) "Low"
-        else if (c.gdp <= 12000) "Middle"
-        else "High"
+    countries
+      .map { c =>
+        val category =
+          if (c.gdp < 4000) "Low"
+          else if (c.gdp <= 12000) "Middle"
+          else "High"
         (category, c)
-    }.groupBy(_._1).map {
-        case (cat, pairs) => (cat, pairs.map(_._2))
-    }.map { case (cat, countriesInCat) =>
-        GdpCategoryStats(cat, countriesInCat, countriesInCat.size)
-    }.toList
+      }
+      .groupBy(_._1)
+      .map { case (cat, pairs) =>
+        GdpCategoryStats(
+          category = cat,
+          countryCount = pairs.size
+        )
+      }.toList
   }
 
   def capitalStats(countries:List[Country]): List[CapitalStats] = {

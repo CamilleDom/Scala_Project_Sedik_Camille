@@ -1,6 +1,88 @@
-// Supprimer doublons par code pays
-          val distinctCountries= goodFormat
-            .groupBy(_.code)
-            .map { case (_, list) => list.head }
-            .toList
-          val duplicatesRemoved = goodFormat.size - distinctCountries.size
+case class Country(
+  name: String,
+  continent: String,
+  population: Long,
+  area: Double,
+  gdp: Double,
+  languages: List[String],
+  currency: String
+)
+
+case class CountryStats(
+  totalCountries: Int,
+  averagePopulation: Long,
+  averageGdp: Double
+)
+
+case class TopCountry(
+  name: String,
+  continent: String,
+  value: Double
+)
+
+case class MultilingualCountry(
+  name: String,
+  languages: List[String]
+)
+
+case class LanguageStats(
+  language: String,
+  countryCount: Int,
+  commonCountries: List[String]
+)
+
+case class ContinentLanguageDiversity(
+  continent: String,
+  diversity: Double
+)
+
+case class PopulationDensity(
+  name: String,
+  continent: String,
+  density: Double
+)
+
+case class GdpCategoryStats(
+  category: String,
+  countryCount: Int
+)
+
+case class CapitalStats(
+  continent: String,
+  countryCount: Int
+)
+
+case class CurrencyUsage(
+  currency: String,
+  countryCount: Int,
+  countries: List[String]
+)
+
+case class ExtremeCountryStats(
+  mostPopulated: String,
+  leastPopulated: String,
+  richest: String,
+  poorest: String,
+  largest: String,
+  smallest: String
+)
+
+// **La case class principale pour ton main**
+case class StatCompile(
+  globalStats: CountryStats,
+  average_population_by_continent: Map[String, Double],
+  top_10_by_population: List[TopCountry],
+  top_10_by_area: List[TopCountry],
+  top_10_by_gdp: List[TopCountry],
+  top_10_by_density: List[TopCountry],
+  top_10_by_wealth: List[TopCountry],
+  countries_by_continent: Map[String, Int],
+  multilingual_countries: List[MultilingualCountry],
+  languageStats: List[LanguageStats],
+  continentLanguageDiversity: List[ContinentLanguageDiversity],
+  populationDensity: List[PopulationDensity],
+  gdpCategoryStats: List[GdpCategoryStats],
+  capitalStats: List[CapitalStats],
+  currencyUsage: List[CurrencyUsage],
+  extremeStats: ExtremeCountryStats
+)

@@ -86,31 +86,22 @@ case class MultilingualCountry(
 
 // Classes pour le rapport final
 case class StatCompile(
-  globalStats: CountryStats,
-
-  top_10_by_population: List[TopCountry],
-  top_10_by_area: List[TopCountry],
-  top_10_by_gdp: List[TopCountry],
-  top_10_by_density: List[TopCountry],
-  top_10_by_wealth: List[TopCountry],
-
-  countries_by_continent: Map[String, Int],
-  average_population_by_continent: Map[String, Double],
-
-  multilingual_countries: List[MultilingualCountry],
-  languageStats: List[LanguageStats],
-  continentLanguageDiversity: List[ContinentLanguageDiversity],
-
-  populationDensity: List[PopulationDensity],
-
-  gdpCategoryStats: List[GdpCategoryStats],
-
-  capitalStats: List[CapitalStats],
-
-  currencyUsage: List[CurrencyUsage],
-
-  extremeStats: ExtremeCountryStats,
-
+  countryStatistics: CountryStats,
+  avPopByCont: Map[String, Double],
+  top10ByPop: List[TopCountry],
+  top10ByArea: List[TopCountry],
+  top10ByGdp: List[TopCountry],
+  top10ByDensity: List[TopCountry],
+  top10ByWealth: List[TopCountry],
+  countriesByContinent: Map[String, Int],
+  multilingualCountries: List[MultilingualCountry],
+  languageStatistics: List[LanguageStats],
+  continentLangDiv: List[ContinentLanguageDiversity],
+  popDensity: List[PopulationDensity],
+  gdpCatStats: List[GdpCategoryStats],
+  capStats: List[CapitalStats],
+  curUsage: List[CurrencyUsage],
+  extStats: ExtremeCountryStats
 )
 
 case class PerformanceStats(
@@ -125,3 +116,5 @@ case class CountryAnalysisReport(
 
     performance_Metrics: PerformanceStats
 )
+
+
