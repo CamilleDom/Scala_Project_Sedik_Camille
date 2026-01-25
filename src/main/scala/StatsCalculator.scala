@@ -26,7 +26,7 @@ object StatsCalculator {
 
     CountryStats(
     totalCountries = countries.size,
-    averagePopulation = if (countries.nonEmpty) (countries.map(_.population).sum / countries.size.toLong) else 0L,
+    averagePopulation = if (countries.nonEmpty) countries.map(_.population).sum / countries.size.toLong else 0L,
     averageGdp = if (countries.nonEmpty) countries.map(_.gdp).sum / countries.size else 0.0
     ) 
   }
@@ -49,7 +49,7 @@ object StatsCalculator {
   def top_10_by_gdp(countries:List[Country]): List[TopCountry] = {
     countries.sortBy(-_.gdp)
         .take(10)
-        .map(c => TopCountry(c.name,c.continent,c.gdp.toDouble))
+        .map(c => TopCountry(c.name,c.continent,c.gdp))
   }
 
   def top_10_by_density(countries:List[Country]): List[TopCountry] = {
@@ -62,7 +62,7 @@ object StatsCalculator {
 
   def top_10_by_wealth(countries:List[Country]): List[TopCountry] = {
 
-    countries.map(c => (c, c.gdp.toDouble / c.population))
+    countries.map(c => (c, c.gdp * 1e9 / c.population)) // Vu que la valeur est en milliards de dollards
         .sortBy(-_._2)
         .take(10)
         .map{ case (c, wealth) => TopCountry(c.name, c.continent, wealth) }
@@ -70,7 +70,7 @@ object StatsCalculator {
 
   def countries_by_continent(countries:List[Country]): Map[String, Int] = {
 
-    countries.groupBy(_.continent).mapValues(_.size).toMap
+    countries.groupBy(_.continent).view.mapValues(_.size).toMap
   }
 
   def average_population_by_continent(countries: List[Country]): Map[String, Double] = {
@@ -82,8 +82,10 @@ object StatsCalculator {
 
   def multilingual_countries(countries:List[Country]): List[MultilingualCountry] = {
 
-    countries.sortBy(c => -c.languages.size)
-         .map(c => MultilingualCountry(c.name , c.languages))
+    countries.filter(_.languages.size >= 3)
+      .sortBy(c => -c.languages.size)
+      .map(c => MultilingualCountry(c.name , c.languages))
+
 
   }
 
@@ -97,6 +99,7 @@ object StatsCalculator {
           commonCountries = pairs.map(_._2) // maintenant c'est List[String]
         )
       }.toList
+      .sortBy(_.countryCount).take(5)
   }
 
   def continentLanguageDiversity(countries:List[Country]): List[ContinentLanguageDiversity] = {
