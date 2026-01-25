@@ -99,7 +99,7 @@ object StatsCalculator {
           commonCountries = pairs.map(_._2) // maintenant c'est List[String]
         )
       }.toList
-      .sortBy(_.countryCount).take(5)
+      .sortBy(-_.countryCount).take(5) // inverse le tri par ordre décroissant
   }
 
   def continentLanguageDiversity(countries:List[Country]): List[ContinentLanguageDiversity] = {
